@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CarbonLens — AI Carbon Footprint Analyzer</title>
+  <meta name="description" content="AI-Powered Carbon Footprint Analyzer & Predictor — B.Tech Final Year Project"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<nav class="nav" id="navbar">
+  <div class="nav-brand">
+    <span class="nav-leaf">🌿</span>
+    <span>CarbonLens</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home"            class="nav-link active">Home</a></li>
+    <li><a href="#features"        class="nav-link">Features</a></li>
+    <li><a href="#analyzer"        class="nav-link">Analyzer</a></li>
+    <li><a href="#upload"          class="nav-link">Upload CSV</a></li>
+    <li><a href="#dashboard"       class="nav-link">Dashboard</a></li>
+    <li><a href="#team"            class="nav-link">Team</a></li>
+    <li><a href="#about"           class="nav-link">About</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('upload').scrollIntoView({behavior:'smooth'})">
+    Upload CSV
+  </button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home"      onclick="toggleMenu()">Home</a>
+  <a href="#features"  onclick="toggleMenu()">Features</a>
+  <a href="#analyzer"  onclick="toggleMenu()">Analyzer</a>
+  <a href="#upload"    onclick="toggleMenu()">Upload CSV</a>
+  <a href="#dashboard" onclick="toggleMenu()">Dashboard</a>
+  <a href="#team"      onclick="toggleMenu()">Team</a>
+  <a href="#about"     onclick="toggleMenu()">About</a>
+</div>
+
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        B.Tech Final Year Project — AI &amp; Data Analytics
+      </div>
+      <h1 class="hero-title">
+        Carbon Footprint<br/>
+        <span class="hero-accent">Analyzer</span>
+      </h1>
+      <p class="hero-sub">
+        Track, predict, and reduce your carbon emissions using AI.
+        Upload your dataset, get ML predictions, and receive a Green Certificate instantly.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="document.getElementById('upload').scrollIntoView({behavior:'smooth'})">
+          Upload CSV &nbsp;<i class="fa fa-upload"></i>
+        </button>
+        <button class="btn-ghost" onclick="scrollToAnalyzer()">
+          <i class="fa fa-keyboard"></i>&nbsp; Manual Entry
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">4+</span>
+          <span class="stat-label">Emission Categories</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">ML</span>
+          <span class="stat-label">Prediction Engine</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">PDF</span>
+          <span class="stat-label">Auto Certificate</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="carbon-ring">
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+        <div class="ring-orbit" style="animation-duration:12s">
+          <div class="ring-planet">🚗</div>
+        </div>
+        <div class="ring-orbit" style="animation-duration:18s;animation-direction:reverse">
+          <div class="ring-planet" style="top:auto;bottom:-14px;background:#14b8a6;box-shadow:0 0 20px rgba(20,184,166,.5)">⚡</div>
+        </div>
+        <div class="ring-center">
+          <span class="ring-icon">🌍</span>
+          <span class="ring-text">CO₂</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ FEATURES ═══════════════════════ -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">What We Do</span>
+      <h2>Intelligent Features</h2>
+      <p>A complete AI-powered system for tracking, predicting, and reducing your environmental impact</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card" data-delay="0">
+        <div class="feature-icon-wrap green"><i class="fa fa-chart-line fa-lg"></i></div>
+        <h3>Carbon Tracking</h3>
+        <p>Collect and monitor daily emissions from transport, electricity, fuel consumption, and dietary habits.</p>
+      </div>
+      <div class="feature-card" data-delay="100">
+        <div class="feature-icon-wrap teal"><i class="fa fa-brain fa-lg"></i></div>
+        <h3>AI Prediction</h3>
+        <p>Linear Regression models forecast future emissions based on your historical activity patterns.</p>
+      </div>
+      <div class="feature-card" data-delay="200">
+        <div class="feature-icon-wrap lime"><i class="fa fa-lightbulb fa-lg"></i></div>
+        <h3>Smart Recommendations</h3>
+        <p>Personalized AI suggestions ranked by environmental impact to help you reduce your footprint.</p>
+      </div>
+      <div class="feature-card" data-delay="300">
+        <div class="feature-icon-wrap emerald"><i class="fa fa-certificate fa-lg"></i></div>
+        <h3>Auto Certificate</h3>
+        <p>If your emission is below threshold, a professional Green Certificate is generated and downloaded automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ CSV UPLOAD ═══════════════════════ -->
+<section class="upload-section" id="upload">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">AI Analysis</span>
+      <h2>Upload Your Dataset</h2>
+      <p>Upload a CSV file — our ML model will process it, predict emissions, and auto-generate your certificate</p>
+    </div>
+
+    <div class="upload-layout">
+
+      <!-- ── LEFT: Upload Panel ── -->
+      <div class="upload-panel">
+        <div class="upload-box" id="uploadBox" onclick="document.getElementById('csvFileInput').click()"
+             ondragover="handleDragOver(event)" ondrop="handleDrop(event)" ondragleave="handleDragLeave(event)">
+          <div class="upload-icon-wrap">
+            <i class="fa fa-file-csv"></i>
+          </div>
+          <p class="upload-box-title">Drag &amp; drop your CSV file here</p>
+          <p class="upload-box-sub">or click to browse • .csv files only</p>
+          <div class="upload-file-name" id="uploadFileName">No file selected</div>
+          <input type="file" id="csvFileInput" accept=".csv" style="display:none" onchange="onFileSelected(this)"/>
+        </div>
+
+        <div class="upload-fields">
+          <div class="form-group">
+            <label><i class="fa fa-user" style="color:var(--green);margin-right:6px"></i>Your Name</label>
+            <input type="text" id="csvUserName" placeholder="e.g. Vaishnavi Gramopadhye"/>
+          </div>
+          <div class="upload-format-hint">
+            <span class="hint-title"><i class="fa fa-circle-info"></i> Expected CSV columns:</span>
+            <div class="hint-cols">
+              <span>car_km</span><span>electricity_units</span><span>fuel_litres</span>
+              <span>public_km</span><span>flight_km</span><span>lpg_cylinders</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-upload" id="uploadBtn" onclick="uploadCSV()">
+          <span id="uploadBtnText"><i class="fa fa-wand-magic-sparkles"></i>&nbsp; Analyze with AI</span>
+          <span id="uploadBtnLoader" style="display:none"><i class="fa fa-spinner fa-spin"></i>&nbsp; Processing...</span>
+        </button>
+
+        <!-- Status banner -->
+        <div class="upload-status" id="uploadStatus" style="display:none"></div>
+      </div>
+
+      <!-- ── RIGHT: Result Panel ── -->
+      <div class="upload-result-panel">
+
+        <!-- Placeholder before upload -->
+        <div class="upload-placeholder" id="uploadPlaceholder">
+          <div class="placeholder-icon">📊</div>
+          <p>Upload a CSV to see your ML analysis results here</p>
+          <div class="placeholder-steps">
+            <div class="p-step"><span class="p-num">1</span>Upload CSV</div>
+            <div class="p-arrow">→</div>
+            <div class="p-step"><span class="p-num">2</span>ML Analysis</div>
+            <div class="p-arrow">→</div>
+            <div class="p-step"><span class="p-num">3</span>Dashboard</div>
+            <div class="p-arrow">→</div>
+            <div class="p-step"><span class="p-num">4</span>Certificate</div>
+          </div>
+        </div>
+
+        <!-- Result content (hidden until upload) -->
+        <div class="ml-result-card" id="mlResultBox" style="display:none">
+
+          <!-- Header -->
+          <div class="ml-result-header">
+            <span class="ml-badge" id="mlBadge">🟢 Activity Dataset</span>
+            <span class="ml-rows" id="mlRows">0 rows</span>
+          </div>
+
+          <!-- KPI grid -->
+          <div class="ml-kpi-grid">
+            <div class="ml-kpi">
+              <div class="ml-kpi-icon" style="color:#22c55e"><i class="fa fa-chart-bar"></i></div>
+              <div class="ml-kpi-label">Average Emission</div>
+              <div class="ml-kpi-value green" id="mlAvgEmission">—<span> kg CO₂</span></div>
+            </div>
+            <div class="ml-kpi">
+              <div class="ml-kpi-icon" style="color:#14b8a6"><i class="fa fa-brain"></i></div>
+              <div class="ml-kpi-label">ML Prediction</div>
+              <div class="ml-kpi-value teal" id="mlPredEmission">—<span> kg CO₂</span></div>
+            </div>
+            <div class="ml-kpi">
+              <div class="ml-kpi-icon" style="color:#a78bfa"><i class="fa fa-percent"></i></div>
+              <div class="ml-kpi-label">Model R² Score</div>
+              <div class="ml-kpi-value purple" id="mlR2">—</div>
+            </div>
+            <div class="ml-kpi">
+              <div class="ml-kpi-icon" id="mlCertIcon" style="color:#22c55e"><i class="fa fa-certificate"></i></div>
+              <div class="ml-kpi-label">Certificate</div>
+              <div class="ml-kpi-value green" id="mlCertStatus">—</div>
+            </div>
+          </div>
+
+          <!-- Emission level badge -->
+          <div class="emission-level-banner" id="emissionLevelBanner">
+            <span class="level-icon" id="levelIcon">—</span>
+            <div class="level-text">
+              <div class="level-title" id="levelTitle">Analyzing...</div>
+              <div class="level-sub" id="levelSub">Upload your CSV to see results</div>
+            </div>
+            <span class="level-badge" id="levelBadge">—</span>
+          </div>
+
+          <!-- AI Insights -->
+          <div class="ai-insights" id="aiInsights">
+            <div class="ai-insights-title"><i class="fa fa-robot"></i> AI Smart Insights</div>
+            <div class="insights-list" id="insightsList"></div>
+          </div>
+
+          <!-- Certificate action -->
+          <div id="certActionArea"></div>
+
+        </div><!-- /ml-result-card -->
+
+        <!-- Certificate status -->
+        <div class="cert-status" id="certStatus" style="display:none"></div>
+
+      </div><!-- /upload-result-panel -->
+    </div><!-- /upload-layout -->
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ MANUAL FORM ═══════════════════════ -->
+<section class="analyzer" id="analyzer">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Manual Entry</span>
+      <h2>Enter Activity Data</h2>
+      <p>No CSV? Fill in your estimated monthly usage manually</p>
+    </div>
+
+    <div class="form-layout">
+      <div class="form-card" id="formCard">
+
+        <div class="form-progress">
+          <div class="progress-step active" data-step="1">
+            <span class="step-num">1</span><span class="step-label">Transport</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="2">
+            <span class="step-num">2</span><span class="step-label">Energy</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="3">
+            <span class="step-num">3</span><span class="step-label">Lifestyle</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="4">
+            <span class="step-num">4</span><span class="step-label">Review</span>
+          </div>
+        </div>
+
+        <!-- Step 1 -->
+        <div id="step1" class="form-step active">
+          <h3 class="step-title"><i class="fa fa-car"></i> Transport Usage</h3>
+          <div class="form-group">
+            <label>Car / Bike Distance <span class="unit-hint">(km/month)</span></label>
+            <div class="input-wrap">
+              <input type="number" id="carKm" placeholder="e.g. 500" min="0"/>
+              <span class="input-icon">km</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Public Transport <span class="unit-hint">(km/month)</span></label>
+            <div class="input-wrap">
+              <input type="number" id="publicKm" placeholder="e.g. 200" min="0"/>
+              <span class="input-icon">km</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Flight Travel <span class="unit-hint">(km/year)</span></label>
+            <div class="input-wrap">
+              <input type="number" id="flightKm" placeholder="e.g. 2000" min="0"/>
+              <span class="input-icon">km</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Vehicle Type</label>
+            <select id="vehicleType">
+              <option value="">Select vehicle type</option>
+              <option value="petrol">Petrol Car</option>
+              <option value="diesel">Diesel Car</option>
+              <option value="cng">CNG / LPG Car</option>
+              <option value="electric">Electric Vehicle</option>
+              <option value="bike">Motorcycle / Scooter</option>
+              <option value="none">No Personal Vehicle</option>
+            </select>
+          </div>
+          <button class="btn-next" onclick="nextStep(1)">Next: Energy &nbsp;<i class="fa fa-arrow-right"></i></button>
+        </div>
+
+        <!-- Step 2 -->
+        <div id="step2" class="form-step">
+          <h3 class="step-title"><i class="fa fa-bolt"></i> Energy Consumption</h3>
+          <div class="form-group">
+            <label>Electricity Usage <span class="unit-hint">(units/month)</span></label>
+            <div class="input-wrap">
+              <input type="number" id="electricityUnits" placeholder="e.g. 150" min="0"/>
+              <span class="input-icon">kWh</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>LPG Cylinders <span class="unit-hint">(per month)</span></label>
+            <div class="input-wrap">
+              <input type="number" id="lpgCylinders" placeholder="e.g. 1" min="0" step="0.5"/>
+              <span class="input-icon">nos</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Fuel Consumption <span class="unit-hint">(litres/month)</span></label>
+            <div class="input-wrap">
+              <input type="number" id="fuelLitres" placeholder="e.g. 40" min="0"/>
+              <span class="input-icon">L</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Renewable Energy</label>
+            <select id="renewableSource">
+              <option value="none">None</option>
+              <option value="solar">Solar Panels at Home</option>
+              <option value="wind">Wind Energy (Green Tariff)</option>
+              <option value="partial">Partial Renewable</option>
+            </select>
+          </div>
+          <div class="step-nav">
+            <button class="btn-back" onclick="prevStep(2)"><i class="fa fa-arrow-left"></i> Back</button>
+            <button class="btn-next" onclick="nextStep(2)">Next: Lifestyle &nbsp;<i class="fa fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div id="step3" class="form-step">
+          <h3 class="step-title"><i class="fa fa-leaf"></i> Lifestyle &amp; Habits</h3>
+          <div class="form-group">
+            <label>Food Habits</label>
+            <select id="foodHabits">
+              <option value="">Select your diet</option>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="pescatarian">Pescatarian</option>
+              <option value="omnivore_low">Omnivore — Low Meat</option>
+              <option value="omnivore_med">Omnivore — Medium Meat</option>
+              <option value="omnivore_high">Omnivore — High Meat</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Shopping Frequency</label>
+            <select id="shoppingFreq">
+              <option value="minimal">Minimal (1–3 items/month)</option>
+              <option value="moderate" selected>Moderate (4–10 items/month)</option>
+              <option value="frequent">Frequent (10+ items/month)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Screen Time <span class="unit-hint">(hrs/day)</span></label>
+            <div class="input-wrap">
+              <input type="number" id="screenTime" placeholder="e.g. 6" min="0" max="24"/>
+              <span class="input-icon">hrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Your Name <span class="unit-hint">(for certificate)</span></label>
+            <input type="text" id="userName" placeholder="e.g. Prerna Dawada"/>
+          </div>
+          <div class="step-nav">
+            <button class="btn-back" onclick="prevStep(3)"><i class="fa fa-arrow-left"></i> Back</button>
+            <button class="btn-next" onclick="nextStep(3)">Review &nbsp;<i class="fa fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div id="step4" class="form-step">
+          <h3 class="step-title"><i class="fa fa-clipboard-check"></i> Review Your Data</h3>
+          <div class="review-grid" id="reviewGrid"></div>
+          <div class="form-group" style="margin-top:1.5rem">
+            <label>Additional Notes <span class="unit-hint">(optional)</span></label>
+            <textarea id="notes" placeholder="Any context about your usage this month..." rows="3"></textarea>
+          </div>
+          <div class="step-nav">
+            <button class="btn-back" onclick="prevStep(4)"><i class="fa fa-pencil"></i> Edit</button>
+            <button class="btn-submit" id="submitBtn" onclick="submitData()">
+              <span id="submitText"><i class="fa fa-paper-plane"></i>&nbsp; Submit &amp; Analyze</span>
+              <span id="submitLoader" style="display:none"><i class="fa fa-spinner fa-spin"></i>&nbsp; Analyzing...</span>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /form-card -->
+
+      <!-- Sidebar -->
+      <div class="form-sidebar">
+        <div class="sidebar-card emission-live">
+          <h4><i class="fa fa-gauge-high" style="color:var(--green)"></i> Live Footprint</h4>
+          <div class="emission-display">
+            <span class="emission-value" id="liveEmission">—</span>
+            <span class="emission-unit">kg CO₂/month</span>
+          </div>
+          <p class="emission-note">Updates as you type</p>
+          <div class="emission-bar-wrap">
+            <div class="emission-bar" id="emissionBar" style="width:0%"></div>
+          </div>
+          <div class="emission-scale"><span>Low</span><span>Average</span><span>High</span></div>
+        </div>
+        <div class="sidebar-card tips-card">
+          <h4><i class="fa fa-lightbulb" style="color:#facc15"></i> Quick Eco Tips</h4>
+          <ul class="tips-list">
+            <li>🚲 Cycling saves ~21 kg CO₂ per 100 km</li>
+            <li>🌱 Vegetarian diet saves ~600 kg CO₂/year</li>
+            <li>💡 LED bulbs use 75% less energy</li>
+            <li>✈️ One long-haul flight ≈ 1,000 kg CO₂</li>
+            <li>☀️ Solar can offset 1–2 tonnes CO₂/year</li>
+          </ul>
+        </div>
+        <div class="sidebar-card data-card">
+          <h4><i class="fa fa-server" style="color:var(--teal)"></i> Data Pipeline</h4>
+          <p style="font-size:.84rem;margin-bottom:12px">Submission structured for:</p>
+          <div class="storage-tags">
+            <span class="tag">Excel / CSV</span>
+            <span class="tag">SQL Database</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">ML Training</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ SUCCESS OVERLAY ═══════════════════════ -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-card">
+    <div class="success-icon">✅</div>
+    <h2>Analysis Complete!</h2>
+    <p>Your carbon footprint data has been processed.</p>
+    <div class="success-message">
+      <span class="powerbi-badge">⚡ Power BI</span>
+      Data successfully recorded. View insights in the dashboard below.
+    </div>
+    <div class="success-data" id="successData"></div>
+    <div class="success-actions">
+      <button class="btn-primary" onclick="document.getElementById('dashboard').scrollIntoView({behavior:'smooth'}); closeSuccess()">
+        <i class="fa fa-chart-pie"></i>&nbsp; View Dashboard
+      </button>
+      <button class="btn-ghost" onclick="resetForm()">
+        <i class="fa fa-rotate-left"></i>&nbsp; New Entry
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ DASHBOARD ═══════════════════════ -->
+<section class="dashboard" id="dashboard">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Results Dashboard</span>
+      <h2>Emission Analysis</h2>
+      <p>Upload a CSV or submit the form — dashboard updates automatically</p>
+    </div>
+
+    <div class="dashboard-grid">
+
+      <div class="dash-card highlight">
+        <h4><i class="fa fa-cloud" style="color:var(--green)"></i> Total Carbon Footprint</h4>
+        <div class="kpi-value" id="kpiTotal">295</div>
+        <div class="kpi-label">kg CO₂ per month</div>
+        <div class="kpi-badge" id="kpiBadge" style="display:inline-block;margin-top:10px;padding:4px 12px;border-radius:6px;font-size:.78rem;font-weight:700">🟡 Sample Data</div>
+      </div>
+
+      <div class="dash-card">
+        <h4><i class="fa fa-list-ul" style="color:var(--teal)"></i> Category Breakdown</h4>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px">
+              <span style="font-size:.82rem;color:var(--text-muted)">🚗 Transport</span>
+              <span style="font-family:'Syne',sans-serif;font-weight:700;color:#22c55e" id="kpiTransport">120</span>
+            </div>
+            <div style="height:5px;background:var(--bg3);border-radius:3px">
+              <div id="barTransport" style="height:100%;background:#22c55e;border-radius:3px;width:40%;transition:.6s ease"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px">
+              <span style="font-size:.82rem;color:var(--text-muted)">⚡ Energy &amp; Fuel</span>
+              <span style="font-family:'Syne',sans-serif;font-weight:700;color:#14b8a6" id="kpiEnergy">95</span>
+            </div>
+            <div style="height:5px;background:var(--bg3);border-radius:3px">
+              <div id="barEnergy" style="height:100%;background:#14b8a6;border-radius:3px;width:32%;transition:.6s ease"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px">
+              <span style="font-size:.82rem;color:var(--text-muted)">🥗 Lifestyle</span>
+              <span style="font-family:'Syne',sans-serif;font-weight:700;color:#f97316" id="kpiLifestyle">80</span>
+            </div>
+            <div style="height:5px;background:var(--bg3);border-radius:3px">
+              <div id="barLifestyle" style="height:100%;background:#f97316;border-radius:3px;width:27%;transition:.6s ease"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-card">
+        <h4><i class="fa fa-chart-pie" style="color:var(--green)"></i> Emission Sources</h4>
+        <div class="chart-wrap"><canvas id="pieChart"></canvas></div>
+      </div>
+
+      <div class="dash-card">
+        <h4><i class="fa fa-chart-line" style="color:var(--teal)"></i> Trend &amp; ML Prediction</h4>
+        <div class="chart-wrap"><canvas id="lineChart"></canvas></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ AI RECOMMENDATIONS ═══════════════════════ -->
+<section class="recommendations" id="recommendations">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">AI Recommendations</span>
+      <h2>Smart Suggestions</h2>
+      <p>Personalized AI actions ranked by environmental impact</p>
+    </div>
+    <div class="rec-grid">
+      <div class="rec-card" data-delay="0">
+        <span class="rec-priority high">HIGH IMPACT</span>
+        <div class="rec-icon-wrap"><i class="fa fa-car" style="font-size:1.4rem;color:#f87171"></i></div>
+        <h3>Reduce Vehicle Usage</h3>
+        <p>Switch to cycling, carpooling, or public transport for daily commutes. Even 3 days/week makes a significant difference.</p>
+        <div class="rec-saving">💚 Saves up to 80 kg CO₂/month</div>
+      </div>
+      <div class="rec-card" data-delay="100">
+        <span class="rec-priority high">HIGH IMPACT</span>
+        <div class="rec-icon-wrap"><i class="fa fa-solar-panel" style="font-size:1.4rem;color:#fb923c"></i></div>
+        <h3>Switch to Renewable Energy</h3>
+        <p>Install rooftop solar or switch to a green energy tariff. This single change can cut energy emissions by 60–80%.</p>
+        <div class="rec-saving">💚 Saves up to 120 kg CO₂/month</div>
+      </div>
+      <div class="rec-card" data-delay="200">
+        <span class="rec-priority medium">MEDIUM IMPACT</span>
+        <div class="rec-icon-wrap"><i class="fa fa-seedling" style="font-size:1.4rem;color:#4ade80"></i></div>
+        <h3>Shift to Plant-Based Diet</h3>
+        <p>Reducing meat consumption is one of the most effective personal climate actions available today.</p>
+        <div class="rec-saving">💚 Saves up to 50 kg CO₂/month</div>
+      </div>
+      <div class="rec-card" data-delay="300">
+        <span class="rec-priority medium">MEDIUM IMPACT</span>
+        <div class="rec-icon-wrap"><i class="fa fa-plug" style="font-size:1.4rem;color:#60a5fa"></i></div>
+        <h3>Reduce Electricity Consumption</h3>
+        <p>Switch to LED lighting, use energy-efficient appliances, and avoid standby power waste.</p>
+        <div class="rec-saving">💚 Saves up to 30 kg CO₂/month</div>
+      </div>
+      <div class="rec-card" data-delay="400">
+        <span class="rec-priority low">LOW EFFORT</span>
+        <div class="rec-icon-wrap"><i class="fa fa-recycle" style="font-size:1.4rem;color:#a78bfa"></i></div>
+        <h3>Conscious Consumption</h3>
+        <p>Buy second-hand, choose sustainable brands, and repair instead of replacing electronics.</p>
+        <div class="rec-saving">💚 Saves up to 20 kg CO₂/month</div>
+      </div>
+      <div class="rec-card" data-delay="500">
+        <span class="rec-priority low">LOW EFFORT</span>
+        <div class="rec-icon-wrap"><i class="fa fa-tree" style="font-size:1.4rem;color:#34d399"></i></div>
+        <h3>Offset Remaining Emissions</h3>
+        <p>Invest in verified carbon offset programs — tree planting, clean cookstoves, or renewable energy projects.</p>
+        <div class="rec-saving">💚 Offset up to 200 kg CO₂/month</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ TEAM ═══════════════════════ -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">The Team</span>
+      <h2>Meet the Developers</h2>
+      <p>The brilliant minds behind CarbonLens — B.Tech Final Year Project</p>
+    </div>
+
+    <div class="team-grid">
+
+      <!-- Member 1 — Professor -->
+      <div class="team-card professor" data-delay="300">
+        <div class="team-leader-badge prof-badge"><i class="fa fa-graduation-cap"></i> Project Guide</div>
+        <div class="team-card-inner">
+          <div class="team-avatar-wrap">
+            <img
+              src="https://ui-avatars.com/api/?name=Vishal+Anagire&background=ca8a04&color=fefce8&size=200&bold=true&font-size=0.4"
+              alt="Vishal Anagire"
+              class="team-avatar"
+              onerror="this.src='https://ui-avatars.com/api/?name=VA&background=ca8a04&color=fefce8&size=200'"
+            />
+            <div class="team-avatar-ring gold"></div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Vishal Anagire</h3>
+            <span class="team-role coordinator">Project Coordinator</span>
+            <p class="team-desc">Guided the project vision, coordinated between departments, and provided technical mentorship throughout.</p>
+            <div class="team-socials">
+              <a href="mailto:vishal.anagire@gmail.com" class="social-icon mail" title="Gmail" aria-label="Email">
+                <i class="fa fa-envelope"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com" target="_blank" class="social-icon github" title="GitHub" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2 — Group Leader -->
+      <div class="team-card leader" data-delay="100">
+        <div class="team-leader-badge"><i class="fa fa-crown"></i> Group Leader</div>
+        <div class="team-card-inner">
+          <div class="team-avatar-wrap">
+            <img
+              src="https://ui-avatars.com/api/?name=Vaishnavi+Gramopadhye&background=0d9488&color=f0fdfa&size=200&bold=true&font-size=0.4"
+              alt="Vaishnavi Gramopadhye"
+              class="team-avatar"
+              onerror="this.src='https://ui-avatars.com/api/?name=VG&background=0d9488&color=f0fdfa&size=200'"
+            />
+            <div class="team-avatar-ring teal"></div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Vaishnavi Gramopadhye</h3>
+            <span class="team-role analyst">Data Analyst</span>
+            <p class="team-desc">Led the project, managed Power BI dashboards, data preprocessing, and analytics pipeline design.</p>
+            <div class="team-socials">
+              <a href="mailto:vaishnavi.gramopadhye@gmail.com" class="social-icon mail" title="Gmail" aria-label="Email">
+                <i class="fa fa-envelope"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/vaishnavi-gramopadhye-0ba679259/" target="_blank" class="social-icon linkedin" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com" target="_blank" class="social-icon github" title="GitHub" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="team-card" data-delay="0">
+        <div class="team-card-inner">
+          <div class="team-avatar-wrap">
+            <img
+              src="https://ui-avatars.com/api/?name=Khushi+Kasliwal&background=166534&color=6ee7b7&size=200&bold=true&font-size=0.4"
+              alt="Khushi Kasliwal"
+              class="team-avatar"
+              onerror="this.src='https://ui-avatars.com/api/?name=KK&background=166534&color=6ee7b7&size=200'"
+            />
+            <div class="team-avatar-ring"></div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Khushi Kasliwal</h3>
+            <span class="team-role ai">AI/ML Engineer &amp; Backend Dev</span>
+            <p class="team-desc">Designed the ML prediction pipeline, Flask APIs, and carbon emission calculation engine.</p>
+            <div class="team-socials">
+              <a href="mailto:khushikasliwal4@gmail.com" class="social-icon mail" title="Gmail" aria-label="Email">
+                <i class="fa fa-envelope"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/khushi-kasliwal-953692260/" target="_blank" class="social-icon linkedin" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/kkasliwal05" target="_blank" class="social-icon github" title="GitHub" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="team-card" data-delay="200">
+        <div class="team-card-inner">
+          <div class="team-avatar-wrap">
+            <img
+              src="https://ui-avatars.com/api/?name=Prerna+Dawada&background=7c3aed&color=ede9fe&size=200&bold=true&font-size=0.4"
+              alt="Prerna Dawada"
+              class="team-avatar"
+              onerror="this.src='https://ui-avatars.com/api/?name=PD&background=7c3aed&color=ede9fe&size=200'"
+            />
+            <div class="team-avatar-ring purple"></div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Prerna Dawada</h3>
+            <span class="team-role frontend">Frontend Developer</span>
+            <p class="team-desc">Crafted the complete UI/UX — responsive design, animations, Chart.js dashboards, and user experience.</p>
+            <div class="team-socials">
+              <a href="mailto:prerna.dawada@example.com" class="social-icon mail" title="Gmail" aria-label="Email">
+                <i class="fa fa-envelope"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/prerna-dawada-08482b259/" target="_blank" class="social-icon linkedin" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com" target="_blank" class="social-icon github" title="GitHub" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /team-grid -->
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-text">
+        <span class="section-tag">About This Project</span>
+        <h2>AI-Powered Carbon Footprint Analyzer</h2>
+        <p class="about-desc">
+          CarbonLens bridges AI, data analytics, and sustainability. It empowers individuals to understand
+          their carbon impact through a seamless pipeline from data collection to machine learning predictions
+          and Power BI visualization.
+        </p>
+        <div class="about-points">
+          <div class="about-point">
+            <span class="point-bullet">✦</span>
+            <p><strong>Domain:</strong> Artificial Intelligence &amp; Data Analytics</p>
+          </div>
+          <div class="about-point">
+            <span class="point-bullet">✦</span>
+            <p><strong>ML Models:</strong> Linear Regression · ARIMA · Random Forest for emission classification</p>
+          </div>
+          <div class="about-point">
+            <span class="point-bullet">✦</span>
+            <p><strong>Data Flow:</strong> CSV Upload → Flask API → ML Model → Dashboard → Certificate</p>
+          </div>
+          <div class="about-point">
+            <span class="point-bullet">✦</span>
+            <p><strong>Goal:</strong> Enable data-driven climate action through intelligent analytics.</p>
+          </div>
+          <div class="about-point">
+            <span class="point-bullet">✦</span>
+            <p><strong>SDG:</strong> UN Sustainable Development Goal 13 — Climate Action</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-card-stack">
+        <div class="about-tech-card">
+          <h4><i class="fa fa-code" style="color:var(--green);margin-right:8px"></i>Technology Stack</h4>
+          <div class="tech-tags">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+            <span>Python</span><span>Flask</span><span>MySQL</span>
+            <span>Power BI</span><span>scikit-learn</span><span>Pandas</span>
+            <span>NumPy</span><span>Chart.js</span><span>ReportLab</span>
+          </div>
+        </div>
+        <div class="about-sdg-card">
+          <span class="sdg-number">SDG 13</span>
+          <span class="sdg-text">Climate<br/>Action</span>
+          <span class="sdg-icon">🌍</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="nav-brand" style="margin-bottom:14px">
+          <span class="nav-leaf">🌿</span>
+          <span style="color:#fff;font-size:1.2rem">CarbonLens</span>
+        </div>
+        <p>AI-Powered Carbon Footprint Analyzer &amp; Predictor. B.Tech Final Year Project — AI &amp; Data Analytics.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#upload">Upload CSV</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Project Info</h5>
+        <p style="margin-bottom:8px"><i class="fa fa-envelope" style="color:var(--green);margin-right:8px"></i>team@carbonlens.ai</p>
+        <p style="margin-bottom:8px"><i class="fa fa-graduation-cap" style="color:var(--green);margin-right:8px"></i>Dept. of Electronics and Telecommunication Engg</p>
+        <p style="margin-bottom:8px"><i class="fa fa-code-branch" style="color:var(--green);margin-right:8px"></i>AI &amp; Data Analytics Track</p>
+        <p><i class="fa fa-server" style="color:var(--green);margin-right:8px"></i>Flask · Python · scikit-learn</p>
+      </div>
+    </div>
+    <hr class="footer-divider"/>
+    <div class="footer-bottom">
+      <p>© 2024 CarbonLens — B.Tech Final Year Project. All rights reserved.</p>
+      <p>Built with <span style="color:var(--green)">♥</span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast container -->
+<div id="toastContainer" style="position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:10px"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
