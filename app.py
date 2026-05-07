@@ -34,7 +34,7 @@ weekly_data = []
 def realtime_data():
     try:
         # 🌦️ Weather API
-        url = "https://api.openweathermap.org/data/2.5/weather?q=Pune&appid=0e99c4db20b60d89d1f1678172fb060c"
+        url = "https://api.openweathermap.org/data/2.5/weather?q=Pune&appid= api keyy" #generate from the weather api
         res = requests.get(url).json()
 
         temp = res['main']['temp'] - 273.15  # Kelvin → Celsius
