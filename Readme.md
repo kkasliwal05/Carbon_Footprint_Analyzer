@@ -1,160 +1,214 @@
-# 🌱 CarbonLens — Carbon Footprint Analyzer
+# 🌱 CarbonLens — AI Powered Carbon Footprint Analyzer
 
 ## 🚀 Overview
 
-CarbonLens is an AI-powered web application that analyzes carbon emissions based on user activity data.
-It processes input data, predicts emissions using Machine Learning, visualizes insights, and rewards sustainable behavior with an automated certificate.
+CarbonLens is an AI-powered web application designed to analyze, predict, and visualize carbon emissions using real-time environmental and activity-based data.
+
+The system fetches live data using APIs, processes emissions using predefined emission factors, applies Machine Learning for prediction, and provides an interactive dashboard for visualization and analysis.
+
+CarbonLens also promotes sustainable behavior through automated green certificate generation for users with low carbon emissions.
 
 ---
 
-## 🎯 Features
+# 🎯 Key Features
 
-* 📊 Carbon Emission Analysis
-* 🤖 Machine Learning Prediction (Linear Regression)
-* 📂 CSV Upload Support
-* 📈 Dashboard Visualization
-* 🏆 Green Certificate Generation
-* 🌐 Interactive Web Interface
-
----
-
-## 🧠 How It Works
-
-1. User uploads a CSV file containing activity data
-2. Backend processes data using Pandas
-3. CO₂ emissions are calculated using emission factors
-4. Machine Learning model predicts emissions
-5. Dashboard displays results
-6. If emission < 200 → Certificate is generated
+- 📊 Real-Time Carbon Footprint Analysis
+- 🌐 Live API Data Integration
+- 🤖 AI/ML-based Emission Prediction
+- 📈 Interactive Dashboard & Visualizations
+- 🏆 Automated Green Certificate Generation
+- ⚡ Automated Data Processing
+- 🌍 Responsive Web Interface
+- 📉 Emission Trend Analysis
 
 ---
 
-## 🧮 CO₂ Calculation Formula
+# 🧠 Working Process
 
+1. System fetches real-time environmental data using APIs
+2. Backend processes the data using Python and Pandas
+3. Carbon emissions are calculated using emission formulas
+4. Machine Learning model predicts future emissions
+5. Dashboard visualizes insights and trends
+6. Green Certificate is generated for sustainable emission levels
+
+---
+
+# 🧮 CO₂ Emission Formula
+
+```text
 CO₂ = (car_km × 0.21) + (electricity_units × 0.82) + (fuel_litres × 2.3)
-
----
-
-## 🤖 Machine Learning Model
-
-* Model Used: Linear Regression
-* Type: Supervised Learning
-* Purpose: Predict carbon emissions
-
----
-
-## 🏆 Emission Classification
-
-| Level     | Range (kg CO₂/month) |
-| --------- | -------------------- |
-| 🟢 Low    | < 200                |
-| 🟡 Medium | 200 – 400            |
-| 🔴 High   | > 400                |
-
----
-
-## ⚙️ Tech Stack
-
-### Frontend
-
-* HTML
-* CSS
-* JavaScript
-
-### Backend
-
-* Python (Flask)
-
-### Libraries
-
-* Pandas
-* Scikit-learn
-* ReportLab
-
----
-
-## 📁 Project Structure
-
-```id="bdpj3n"
-Finalprj/
-│
-├── app.py
-├── index.html
-├── style.css
-├── script.js
-├── green_certificate.png
-├── README.md
 ```
 
 ---
 
-## ▶️ How to Run
+# 🤖 Machine Learning Model
 
-1. Install dependencies:
+| Feature | Details |
+|---|---|
+| Model Used | Linear Regression |
+| Learning Type | Supervised Learning |
+| Purpose | Predict Carbon Emissions |
 
-```id="5o8drd"
-pip install flask pandas scikit-learn reportlab
+---
+
+# 🏆 Emission Classification
+
+| Level | Range (kg CO₂ / month) |
+|---|---|
+| 🟢 Low | < 200 |
+| 🟡 Medium | 200 – 400 |
+| 🔴 High | > 400 |
+
+---
+
+# ⚙️ Tech Stack
+
+## 💻 Frontend
+- HTML
+- CSS
+- JavaScript
+
+## 🖥️ Backend
+- Python (Flask)
+
+## 📚 Libraries & Tools
+- Pandas
+- Scikit-learn
+- ReportLab
+- Chart.js
+
+## 🌐 API Integration
+- OpenWeather API
+
+---
+
+# ▶️ Installation & Setup
+
+## 1️⃣ Install Dependencies
+
+```bash
+pip install flask pandas scikit-learn reportlab requests
 ```
 
-2. Run the app:
+## 2️⃣ Run the Application
 
-```id="n6ruv3"
+```bash
 python app.py
 ```
 
-3. Open browser:
+## 3️⃣ Open in Browser
 
-```id="0s3lyx"
+```text
 http://127.0.0.1:5000
 ```
 
 ---
 
-## 🚧 Limitations
+# 📸 Project Screenshots
 
-* Uses static CSV data (not real-time)
-* Linear Regression is a basic model
-* No real-time API or sensor integration
-* Depends on data quality
+## 🏠 Home Page
 
----
-
-## 🔮 Future Scope
-
-* Real-time data integration using APIs
-* Automated data pipeline (no manual CSV upload)
-* Advanced ML models (Random Forest, XGBoost)
-* IoT-based real-time carbon tracking
-* Cloud deployment
-* User authentication & tracking
+<img width="1914" height="905" alt="Screenshot 2026-05-02 111036" src="https://github.com/user-attachments/assets/983cd84c-1fba-48b5-a340-e85b56387130" />
 
 ---
 
-## 👩‍💻 Team
+## 📊 Emission Analysis Dashboard
 
-* Vishal Anagire — Project Coordinator
-* Vaishnavi Gramopadhye — Data Analyst
-* Khushi Kasliwal — AI/ML Engineer & Backend Developer
-* Prerna Dawada — Frontend Developer
+<img width="1919" height="905" alt="Screenshot 2026-05-02 111127" src="https://github.com/user-attachments/assets/25854888-54b8-49fa-99c7-3ca843329d5d" />
 
 ---
 
-## 🌍 Conclusion
+## 🌍 Real-Time Carbon Processing
 
-CarbonLens helps users understand and manage their carbon footprint using data-driven insights and machine learning.
-
----
-
-## 🤝 Connect & Support
-
-If you have any questions, feedback, or would like to collaborate, feel free to connect:
-
-👩‍💻 **Khushi Kasliwal**
-
-* 🔗 LinkedIn: https://www.linkedin.com/in/khushi-kasliwal-953692260/
-* 💻 GitHub: https://github.com/kkasliwal05
+<img width="1860" height="890" alt="Screenshot 2026-05-02 111103" src="https://github.com/user-attachments/assets/c4530506-9f6b-418d-94c3-7b38bcd2e71c" />
 
 ---
 
-⭐ If you found this project helpful, don’t forget to **star the repository**!
+## 🏆 Generated Green Certificate
 
+<img width="935" height="658" alt="Screenshot 2026-04-27 155956" src="https://github.com/user-attachments/assets/9164f6c3-b4ac-4562-85de-a00286d3e277" />
+
+---
+
+# 📊 Dashboard Outputs
+
+- Total Carbon Emission
+- Transportation Emission Analysis
+- Electricity Consumption Emission
+- Fuel Consumption Analysis
+- Emission Trend Graphs
+- Sustainability Insights
+- Real-Time Environmental Monitoring
+
+---
+
+# 🚧 Current Limitations
+
+- Some activity data is estimated/simulated
+- Basic Linear Regression prediction model
+- No IoT sensor integration yet
+- Depends on internet connectivity for API fetching
+- Limited real-world deployment support
+
+---
+
+# 🔮 Future Enhancements
+
+- 🌐 Advanced Real-Time API Integration
+- 📡 IoT-based Carbon Monitoring
+- ☁️ Cloud Deployment
+- 📱 Mobile Application Support
+- 🔐 User Authentication System
+- 🧠 Advanced ML Models (Random Forest, XGBoost)
+- 📍 GPS-based Transportation Tracking
+- 📊 Advanced Analytics Dashboard
+
+---
+
+# 🌍 Sustainable Development Goals (SDGs)
+
+This project supports:
+
+- 🌱 SDG 13 — Climate Action
+- ⚡ SDG 7 — Affordable & Clean Energy
+- ♻️ SDG 12 — Responsible Consumption
+- 🏙️ SDG 11 — Sustainable Cities & Communities
+- 🚀 SDG 9 — Industry, Innovation & Infrastructure
+
+---
+
+# 👩‍💻 Team Members
+
+| Name | Role |
+|---|---|
+| Vishal Anagire | Project Coordinator |
+| Vaishnavi Gramopadhye | Data Analyst |
+| Khushi Kasliwal | AI/ML Engineer & Backend Developer |
+| Prerna Dawada | Frontend Developer |
+
+---
+
+# 🌟 Conclusion
+
+CarbonLens demonstrates how Artificial Intelligence, APIs, and web technologies can be combined to create practical solutions for environmental sustainability.
+
+The system helps users monitor, understand, and reduce their carbon footprint through intelligent analysis, prediction, and visualization.
+
+By integrating automation and real-time environmental data, CarbonLens contributes toward building a smarter and greener future.
+
+---
+
+# 🤝 Connect With Me
+
+## 👩‍💻 Khushi Kasliwal
+
+### 🔗 LinkedIn
+https://www.linkedin.com/in/khushi-kasliwal-953692260/
+
+### 💻 GitHub
+https://github.com/kkasliwal05
+
+---
+
+⭐ If you found this project helpful, don't forget to star the repository!
