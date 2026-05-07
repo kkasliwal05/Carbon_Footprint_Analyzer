@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CarbonLens — AI Carbon Footprint Analyzer</title>
+  <meta name="description" content="AI-Powered Carbon Footprint Analyzer & Predictor — B.Tech Final Year Project"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<nav class="nav" id="navbar">
+  <div class="nav-brand">
+    <span class="nav-leaf">🌿</span>
+    <span>CarbonLens</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home"            class="nav-link active">Home</a></li>
+    <li><a href="#features"        class="nav-link">Features</a></li>
+    <li><a href="#realtime"        class="nav-link">Real-Time</a></li>
+    <li><a href="#dashboard"       class="nav-link">Dashboard</a></li>
+    <li><a href="#team"            class="nav-link">Team</a></li>
+    <li><a href="#about"           class="nav-link">About</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('realtime').scrollIntoView({behavior:'smooth'})">
+    Real-Time Carbon Tracking Enabled 🌍
+  </button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home"      onclick="toggleMenu()">Home</a>
+  <a href="#features"  onclick="toggleMenu()">Features</a>
+  <a href="#realtime"  onclick="toggleMenu()">Real-Time</a>
+  <a href="#dashboard" onclick="toggleMenu()">Dashboard</a>
+  <a href="#team"      onclick="toggleMenu()">Team</a>
+  <a href="#about"     onclick="toggleMenu()">About</a>
+</div>
+
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        B.Tech Final Year Project — AI &amp; Data Analytics
+      </div>
+      <h1 class="hero-title">
+        Carbon Footprint<br/>
+        <span class="hero-accent">Analyzer</span>
+      </h1>
+      <p class="hero-sub">
+        Track, predict, and reduce your carbon emissions using AI.
+        Live API data is automatically processed using AI to estimate and track carbon emissions in real time.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="document.getElementById('realtime').scrollIntoView({behavior:'smooth'})">
+          Start Real-Time Tracking &nbsp;<i class="fa fa-play"></i>
+        </button>
+      </div>
+
+      <div style="margin-top:10px;color:#22c55e;font-weight:600">
+          🟢 Live Data Streaming Enabled
+      </div>
+
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">4+</span>
+          <span class="stat-label">Emission Categories</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">ML</span>
+          <span class="stat-label">Prediction Engine</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">PDF</span>
+          <span class="stat-label">Auto Certificate</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="carbon-ring">
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+        <div class="ring-orbit" style="animation-duration:12s">
+          <div class="ring-planet">🚗</div>
+        </div>
+        <div class="ring-orbit" style="animation-duration:18s;animation-direction:reverse">
+          <div class="ring-planet" style="top:auto;bottom:-14px;background:#14b8a6;box-shadow:0 0 20px rgba(20,184,166,.5)">⚡</div>
+        </div>
+        <div class="ring-center">
+          <span class="ring-icon">🌍</span>
+          <span class="ring-text">CO₂</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ FEATURES ═══════════════════════ -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">What We Do</span>
+      <h2>Intelligent Features</h2>
+      <p>A complete AI-powered system for tracking, predicting, and reducing your environmental impact</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card" data-delay="0">
+        <div class="feature-icon-wrap green"><i class="fa fa-chart-line fa-lg"></i></div>
+        <h3>Carbon Tracking</h3>
+        <p>Collect and monitor daily emissions from transport, electricity, fuel consumption, and dietary habits.</p>
+      </div>
+      <div class="feature-card" data-delay="100">
+        <div class="feature-icon-wrap teal"><i class="fa fa-brain fa-lg"></i></div>
+        <h3>AI Prediction</h3>
+        <p>Linear Regression models forecast future emissions based on your historical activity patterns.</p>
+      </div>
+      <div class="feature-card" data-delay="200">
+        <div class="feature-icon-wrap lime"><i class="fa fa-lightbulb fa-lg"></i></div>
+        <h3>Smart Recommendations</h3>
+        <p>Personalized AI suggestions ranked by environmental impact to help you reduce your footprint.</p>
+      </div>
+      <div class="feature-card" data-delay="300">
+        <div class="feature-icon-wrap emerald"><i class="fa fa-certificate fa-lg"></i></div>
+        <h3>Auto Certificate</h3>
+        <p>If your emission is below threshold, a professional Green Certificate is generated and downloaded automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="upload-section" id="realtime">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Real-Time System</span>
+      <h2>Live Carbon Processing</h2>
+      <p>Automatic data ingestion from APIs → processing → emission output</p>
+    </div>
+
+    <div class="upload-layout">
+
+      <!-- LEFT: Live Data -->
+      <div class="upload-panel">
+        <div class="upload-box">
+          <div class="upload-icon-wrap">
+            <i class="fa fa-satellite-dish"></i>
+          </div>
+          <p class="upload-box-title">Live API Feed</p>
+          <p class="upload-box-sub">Data auto-refreshes at intervals</p>
+
+          <div class="upload-file-name">
+            🌡️ Temp: <b id="rtTemp">--</b> °C
+          </div>
+          <div class="upload-file-name">
+            🚗 Distance: <b id="rtKm">--</b> km
+          </div>
+          <div class="upload-file-name">
+            ⚡ Electricity: <b id="rtElectric">--</b> units
+          </div>
+          <div class="upload-file-name">
+            ⛽ Fuel: <b id="rtFuel">--</b> L
+          </div>
+        </div>
+
+        <button class="btn-upload" onclick="autoRunSystem()">
+          <i class="fa fa-play"></i>&nbsp; Fetch Live Data
+        </button>
+
+        <div class="upload-status" style="display:block;margin-top:12px">
+          🟢 Status: <span id="rtStatus">Idle</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Processing + Output -->
+      <div class="upload-result-panel">
+
+        <div class="ml-result-card" style="display:block">
+
+          <div class="ml-result-header">
+            <span class="ml-badge">⚙️ Processing Pipeline</span>
+            <span class="ml-rows">Real-Time</span>
+          </div>
+
+          <div class="ml-kpi-grid">
+            <div class="ml-kpi">
+              <div class="ml-kpi-label">Step 1</div>
+              <div class="ml-kpi-value">Weather API</div>
+            </div>
+            <div class="ml-kpi">
+              <div class="ml-kpi-label">Step 2</div>
+              <div class="ml-kpi-value">Transport Simulation</div>
+            </div>
+            <div class="ml-kpi">
+              <div class="ml-kpi-label">Step 3</div>
+              <div class="ml-kpi-value">Energy Estimation</div>
+            </div>
+            <div class="ml-kpi">
+              <div class="ml-kpi-label">Step 4</div>
+              <div class="ml-kpi-value">CO₂ Calculation</div>
+            </div>
+          </div>
+
+          <div class="emission-level-banner">
+            <span class="level-icon">🌍</span>
+            <div class="level-text">
+              <div class="level-title">Carbon Output</div>
+              <div class="level-sub">Real-time estimated emission</div>
+            </div>
+            <span class="level-badge" id="rtEmission">--</span>
+          </div>
+
+          <div style="margin-top:12px;color:#22c55e;font-weight:600">
+            🟢 Last Updated: <span id="lastUpdated">--</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SUCCESS OVERLAY ═══════════════════════ -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-card">
+    <div class="success-icon">✅</div>
+    <h2>Analysis Complete!</h2>
+    <p>Your carbon footprint data has been processed.</p>
+    <div class="success-message">
+      <span class="powerbi-badge">⚡ Power BI</span>
+      Data successfully recorded. View insights in the dashboard below.
+    </div>
+    <div class="success-data" id="successData"></div>
+    <div class="success-actions">
+      <button class="btn-primary" onclick="document.getElementById('dashboard').scrollIntoView({behavior:'smooth'}); closeSuccess()">
+        <i class="fa fa-chart-pie"></i>&nbsp; View Dashboard
+      </button>
+      <button class="btn-ghost" onclick="resetForm()">
+        <i class="fa fa-rotate-left"></i>&nbsp; New Entry
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ DASHBOARD ═══════════════════════ -->
+<section class="dashboard" id="dashboard">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Results Dashboard</span>
+      <h2>Emission Analysis</h2>
+      <p>Real-time API data is processed and visualized automatically</p>
+    </div>
+
+    <div class="dashboard-grid">
+
+      <div class="dash-card highlight">
+        <h4><i class="fa fa-cloud" style="color:var(--green)"></i> Total Carbon Footprint</h4>
+        <div class="kpi-value" id="kpiTotal">295</div>
+        <div class="kpi-label">kg CO₂ per month</div>
+        <div class="kpi-badge" id="kpiBadge" style="display:inline-block;margin-top:10px;padding:4px 12px;border-radius:6px;font-size:.78rem;font-weight:700">🟡 Sample Data</div>
+      </div>
+      <button class="btn-primary" onclick="generateCertificate()">
+        🎓 Download Green Certificate
+      </button>
+      <div class="dash-card">
+        <h4><i class="fa fa-list-ul" style="color:var(--teal)"></i> Category Breakdown</h4>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px">
+              <span style="font-size:.82rem;color:var(--text-muted)">🚗 Transport</span>
+              <span style="font-family:'Syne',sans-serif;font-weight:700;color:#22c55e" id="kpiTransport">120</span>
+            </div>
+            <div style="height:5px;background:var(--bg3);border-radius:3px">
+              <div id="barTransport" style="height:100%;background:#22c55e;border-radius:3px;width:40%;transition:.6s ease"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px">
+              <span style="font-size:.82rem;color:var(--text-muted)">⚡ Energy &amp; Fuel</span>
+              <span style="font-family:'Syne',sans-serif;font-weight:700;color:#14b8a6" id="kpiEnergy">95</span>
+            </div>
+            <div style="height:5px;background:var(--bg3);border-radius:3px">
+              <div id="barEnergy" style="height:100%;background:#14b8a6;border-radius:3px;width:32%;transition:.6s ease"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px">
+              <span style="font-size:.82rem;color:var(--text-muted)">🥗 Lifestyle</span>
+              <span style="font-family:'Syne',sans-serif;font-weight:700;color:#f97316" id="kpiLifestyle">80</span>
+            </div>
+            <div style="height:5px;background:var(--bg3);border-radius:3px">
+              <div id="barLifestyle" style="height:100%;background:#f97316;border-radius:3px;width:27%;transition:.6s ease"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-card">
+        <h4><i class="fa fa-chart-pie" style="color:var(--green)"></i> Emission Sources</h4>
+        <div class="chart-wrap"><canvas id="pieChart"></canvas></div>
+      </div>
+
+      <div class="dash-card">
+        <h4><i class="fa fa-chart-line" style="color:var(--teal)"></i> Trend &amp; ML Prediction</h4>
+        <div class="chart-wrap"><canvas id="lineChart"></canvas></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ AI RECOMMENDATIONS ═══════════════════════ -->
+<section class="recommendations" id="recommendations">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">AI Recommendations</span>
+      <h2>Smart Suggestions</h2>
+      <p>Personalized AI actions ranked by environmental impact</p>
+    </div>
+    <div class="rec-grid">
+      <div class="rec-card" data-delay="0">
+        <span class="rec-priority high">HIGH IMPACT</span>
+        <div class="rec-icon-wrap"><i class="fa fa-car" style="font-size:1.4rem;color:#f87171"></i></div>
+        <h3>Reduce Vehicle Usage</h3>
+        <p>Switch to cycling, carpooling, or public transport for daily commutes. Even 3 days/week makes a significant difference.</p>
+        <div class="rec-saving">💚 Saves up to 80 kg CO₂/month</div>
+      </div>
+      <div class="rec-card" data-delay="100">
+        <span class="rec-priority high">HIGH IMPACT</span>
+        <div class="rec-icon-wrap"><i class="fa fa-solar-panel" style="font-size:1.4rem;color:#fb923c"></i></div>
+        <h3>Switch to Renewable Energy</h3>
+        <p>Install rooftop solar or switch to a green energy tariff. This single change can cut energy emissions by 60–80%.</p>
+        <div class="rec-saving">💚 Saves up to 120 kg CO₂/month</div>
+      </div>
+      <div class="rec-card" data-delay="200">
+        <span class="rec-priority medium">MEDIUM IMPACT</span>
+        <div class="rec-icon-wrap"><i class="fa fa-seedling" style="font-size:1.4rem;color:#4ade80"></i></div>
+        <h3>Shift to Plant-Based Diet</h3>
+        <p>Reducing meat consumption is one of the most effective personal climate actions available today.</p>
+        <div class="rec-saving">💚 Saves up to 50 kg CO₂/month</div>
+      </div>
+      <div class="rec-card" data-delay="300">
+        <span class="rec-priority medium">MEDIUM IMPACT</span>
+        <div class="rec-icon-wrap"><i class="fa fa-plug" style="font-size:1.4rem;color:#60a5fa"></i></div>
+        <h3>Reduce Electricity Consumption</h3>
+        <p>Switch to LED lighting, use energy-efficient appliances, and avoid standby power waste.</p>
+        <div class="rec-saving">💚 Saves up to 30 kg CO₂/month</div>
+      </div>
+      <div class="rec-card" data-delay="400">
+        <span class="rec-priority low">LOW EFFORT</span>
+        <div class="rec-icon-wrap"><i class="fa fa-recycle" style="font-size:1.4rem;color:#a78bfa"></i></div>
+        <h3>Conscious Consumption</h3>
+        <p>Buy second-hand, choose sustainable brands, and repair instead of replacing electronics.</p>
+        <div class="rec-saving">💚 Saves up to 20 kg CO₂/month</div>
+      </div>
+      <div class="rec-card" data-delay="500">
+        <span class="rec-priority low">LOW EFFORT</span>
+        <div class="rec-icon-wrap"><i class="fa fa-tree" style="font-size:1.4rem;color:#34d399"></i></div>
+        <h3>Offset Remaining Emissions</h3>
+        <p>Invest in verified carbon offset programs — tree planting, clean cookstoves, or renewable energy projects.</p>
+        <div class="rec-saving">💚 Offset up to 200 kg CO₂/month</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ TEAM ═══════════════════════ -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">The Team</span>
+      <h2>Meet the Developers</h2>
+      <p>The brilliant minds behind CarbonLens — B.Tech Final Year Project</p>
+    </div>
+
+    <div class="team-grid">
+
+      <!-- Member 1 — Professor -->
+      <div class="team-card professor" data-delay="300">
+        <div class="team-leader-badge prof-badge"><i class="fa fa-graduation-cap"></i> Project Guide</div>
+        <div class="team-card-inner">
+          <div class="team-avatar-wrap">
+            <img
+              src="https://ui-avatars.com/api/?name=Vishal+Anagire&background=ca8a04&color=fefce8&size=200&bold=true&font-size=0.4"
+              alt="Vishal Anagire"
+              class="team-avatar"
+              onerror="this.src='https://ui-avatars.com/api/?name=VA&background=ca8a04&color=fefce8&size=200'"
+            />
+            <div class="team-avatar-ring gold"></div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Vishal Anagire</h3>
+            <span class="team-role coordinator">Project Coordinator</span>
+            <p class="team-desc">Guided the project vision, coordinated between departments, and provided technical mentorship throughout.</p>
+            <div class="team-socials">
+              <a href="mailto:vishal.anagire@gmail.com" class="social-icon mail" title="Gmail" aria-label="Email">
+                <i class="fa fa-envelope"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com" target="_blank" class="social-icon github" title="GitHub" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2 — Group Leader -->
+      <div class="team-card leader" data-delay="100">
+        <div class="team-leader-badge"><i class="fa fa-crown"></i> Group Leader</div>
+        <div class="team-card-inner">
+          <div class="team-avatar-wrap">
+            <img
+              src="https://ui-avatars.com/api/?name=Vaishnavi+Gramopadhye&background=0d9488&color=f0fdfa&size=200&bold=true&font-size=0.4"
+              alt="Vaishnavi Gramopadhye"
+              class="team-avatar"
+              onerror="this.src='https://ui-avatars.com/api/?name=VG&background=0d9488&color=f0fdfa&size=200'"
+            />
+            <div class="team-avatar-ring teal"></div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Vaishnavi Gramopadhye</h3>
+            <span class="team-role analyst">Data Analyst</span>
+            <p class="team-desc">Led the project, managed Power BI dashboards, data preprocessing, and analytics pipeline design.</p>
+            <div class="team-socials">
+              <a href="mailto:vaishnavi.gramopadhye@gmail.com" class="social-icon mail" title="Gmail" aria-label="Email">
+                <i class="fa fa-envelope"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/vaishnavi-gramopadhye-0ba679259/" target="_blank" class="social-icon linkedin" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com" target="_blank" class="social-icon github" title="GitHub" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="team-card" data-delay="0">
+        <div class="team-card-inner">
+          <div class="team-avatar-wrap">
+            <img
+              src="https://ui-avatars.com/api/?name=Khushi+Kasliwal&background=166534&color=6ee7b7&size=200&bold=true&font-size=0.4"
+              alt="Khushi Kasliwal"
+              class="team-avatar"
+              onerror="this.src='https://ui-avatars.com/api/?name=KK&background=166534&color=6ee7b7&size=200'"
+            />
+            <div class="team-avatar-ring"></div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Khushi Kasliwal</h3>
+            <span class="team-role ai">AI/ML Engineer &amp; Backend Dev</span>
+            <p class="team-desc">Designed the ML prediction pipeline, Flask APIs, and carbon emission calculation engine.</p>
+            <div class="team-socials">
+              <a href="mailto:khushikasliwal4@gmail.com" class="social-icon mail" title="Gmail" aria-label="Email">
+                <i class="fa fa-envelope"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/khushi-kasliwal-953692260/" target="_blank" class="social-icon linkedin" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/kkasliwal05" target="_blank" class="social-icon github" title="GitHub" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="team-card" data-delay="200">
+        <div class="team-card-inner">
+          <div class="team-avatar-wrap">
+            <img
+              src="https://ui-avatars.com/api/?name=Prerna+Dawada&background=7c3aed&color=ede9fe&size=200&bold=true&font-size=0.4"
+              alt="Prerna Dawada"
+              class="team-avatar"
+              onerror="this.src='https://ui-avatars.com/api/?name=PD&background=7c3aed&color=ede9fe&size=200'"
+            />
+            <div class="team-avatar-ring purple"></div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Prerna Dawada</h3>
+            <span class="team-role frontend">Frontend Developer</span>
+            <p class="team-desc">Crafted the complete UI/UX — responsive design, animations, Chart.js dashboards, and user experience.</p>
+            <div class="team-socials">
+              <a href="mailto:prerna.dawada@example.com" class="social-icon mail" title="Gmail" aria-label="Email">
+                <i class="fa fa-envelope"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/prerna-dawada-08482b259/" target="_blank" class="social-icon linkedin" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com" target="_blank" class="social-icon github" title="GitHub" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /team-grid -->
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-text">
+        <span class="section-tag">About This Project</span>
+        <h2>AI-Powered Carbon Footprint Analyzer</h2>
+        <p class="about-desc">
+          CarbonLens bridges AI, data analytics, and sustainability. It empowers individuals to understand
+          their carbon impact through a seamless pipeline from data collection to machine learning predictions
+          and Power BI visualization.
+        </p>
+        <div class="about-points">
+          <div class="about-point">
+            <span class="point-bullet">✦</span>
+            <p><strong>Domain:</strong> Artificial Intelligence &amp; Data Analytics</p>
+          </div>
+          <div class="about-point">
+            <span class="point-bullet">✦</span>
+            <p><strong>ML Models:</strong> Linear Regression · ARIMA · Random Forest for emission classification</p>
+          </div>
+          <div class="about-point">
+            <span class="point-bullet">✦</span>
+            <p><strong>Data Flow:</strong> Real-Time APIs → Processing Engine → ML Model → Dashboard → Certificate</p>
+          </div>
+          <div class="about-point">
+            <span class="point-bullet">✦</span>
+            <p><strong>Goal:</strong> Enable data-driven climate action through intelligent analytics.</p>
+          </div>
+          <div class="about-point">
+            <span class="point-bullet">✦</span>
+            <p><strong>SDG:</strong> UN Sustainable Development Goal 13 — Climate Action</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-card-stack">
+        <div class="about-tech-card">
+          <h4><i class="fa fa-code" style="color:var(--green);margin-right:8px"></i>Technology Stack</h4>
+          <div class="tech-tags">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+            <span>Python</span><span>Flask</span><span>MySQL</span>
+            <span>Power BI</span><span>scikit-learn</span><span>Pandas</span>
+            <span>NumPy</span><span>Chart.js</span><span>ReportLab</span>
+          </div>
+        </div>
+        <div class="about-sdg-card">
+          <span class="sdg-number">SDG 13</span>
+          <span class="sdg-text">Climate<br/>Action</span>
+          <span class="sdg-icon">🌍</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="nav-brand" style="margin-bottom:14px">
+          <span class="nav-leaf">🌿</span>
+          <span style="color:#fff;font-size:1.2rem">CarbonLens</span>
+        </div>
+        <p>AI-Powered Carbon Footprint Analyzer &amp; Predictor. B.Tech Final Year Project — AI &amp; Data Analytics.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#realtime">Real-Time</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Project Info</h5>
+        <p style="margin-bottom:8px"><i class="fa fa-envelope" style="color:var(--green);margin-right:8px"></i>team@carbonlens.ai</p>
+        <p style="margin-bottom:8px"><i class="fa fa-graduation-cap" style="color:var(--green);margin-right:8px"></i>Dept. of Electronics and Telecommunication Engg</p>
+        <p style="margin-bottom:8px"><i class="fa fa-code-branch" style="color:var(--green);margin-right:8px"></i>AI &amp; Data Analytics Track</p>
+        <p><i class="fa fa-server" style="color:var(--green);margin-right:8px"></i>Flask · Python · scikit-learn</p>
+      </div>
+    </div>
+    <hr class="footer-divider"/>
+    <div class="footer-bottom">
+      <p>© 2024 CarbonLens — B.Tech Final Year Project. All rights reserved.</p>
+      <p>Built with <span style="color:var(--green)">♥</span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast container -->
+<div id="toastContainer" style="position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:10px"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
